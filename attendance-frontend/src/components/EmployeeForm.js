@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useState } from 'react';
 // import API from '../api';
 // import UploadImage from './UploadImage';
@@ -37,6 +38,8 @@
 // };
 
 // export default EmployeeForm;
+=======
+>>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
 import React, { useState } from 'react';
 import API from '../api';
 import UploadImage from './UploadImage';
@@ -45,6 +48,7 @@ const EmployeeForm = () => {
   const [formData, setFormData] = useState({
     name: '', email: '', position: '', department: '', photo: ''
   });
+<<<<<<< HEAD
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -98,6 +102,34 @@ const EmployeeForm = () => {
       <button type="submit" disabled={loading}>
         {loading ? '⏳ Adding...' : '➕ Add Employee'}
       </button>
+=======
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     await API.post('/api/employees', formData);
+//     alert('Employee added');
+//   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+   // await API.post('/api/employees', formData);
+      await API.post('/api/employees/create', formData); 
+    alert('Employee added');
+  } catch (error) {
+    console.error('Submission error:', error);
+    alert('Failed to add employee');
+  }
+};
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <UploadImage setImageUrl={(url) => setFormData({ ...formData, photo: url })} />
+      <input placeholder="Name" onChange={e => setFormData({ ...formData, name: e.target.value })} />
+      <input placeholder="Email" onChange={e => setFormData({ ...formData, email: e.target.value })} />
+      <input placeholder="Position" onChange={e => setFormData({ ...formData, position: e.target.value })} />
+      <input placeholder="Department" onChange={e => setFormData({ ...formData, department: e.target.value })} />
+      <button type="submit">Add Employee</button>
+>>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
     </form>
   );
 };

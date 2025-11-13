@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import EmployeeForm from './components/EmployeeForm';
 // import EmployeeList from './components/EmployeeList';
@@ -17,11 +18,14 @@
 // }
 
 // export default App;
+=======
+>>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
 import React from 'react';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
 import AttendanceForm from './components/AttendanceForm';
 import AttendanceTable from './components/AttendanceTable';
+<<<<<<< HEAD
 import './App.css';
 
 function App() {
@@ -51,6 +55,17 @@ function App() {
           <AttendanceTable />
         </section>
       </div>
+=======
+
+function App() {
+  return (
+    <div className="App" style={{ padding: '20px' }}>
+      <h1>🕒 Employee Attendance System</h1>
+      <EmployeeForm />
+      <EmployeeList />
+      <AttendanceForm />
+      <AttendanceTable />
+>>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
     </div>
   );
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* .App {
+=======
+.App {
+>>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
   text-align: center;
 }
 
@@ -35,6 +39,7 @@
   to {
     transform: rotate(360deg);
   }
+<<<<<<< HEAD
 } */
 * {
   margin: 0;
@@ -177,4 +182,6 @@ tbody tr:last-child {
   .section {
     padding: 20px;
   }
+=======
+>>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
 }
