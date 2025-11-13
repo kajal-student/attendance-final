@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /* .employee-list {
-=======
-.employee-list {
->>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
   margin-top: 20px;
 }
 
@@ -26,12 +22,9 @@
   height: 150px;
   object-fit: cover;
   border-radius: 6px;
-<<<<<<< HEAD
 } */
-.employee-list h3 {
-  color: #667eea;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+.employee-list {
+  margin-top: 20px;
 }
 
 .card-container {
@@ -75,6 +68,4 @@
   color: #666;
   font-size: 0.9rem;
   margin: 4px 0;
-=======
->>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
 }

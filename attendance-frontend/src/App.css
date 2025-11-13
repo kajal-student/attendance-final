@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /* .App {
-=======
-.App {
->>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
   text-align: center;
 }
 
@@ -39,7 +35,6 @@
   to {
     transform: rotate(360deg);
   }
-<<<<<<< HEAD
 } */
 * {
   margin: 0;
@@ -99,7 +94,6 @@ body {
   font-size: 1.5rem;
 }
 
-/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
@@ -141,7 +135,6 @@ button:active {
   transform: translateY(0);
 }
 
-/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -173,15 +166,12 @@ tbody tr:last-child {
   border-bottom: none;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .app-header h1 {
     font-size: 1.8rem;
   }
-  
+
   .section {
     padding: 20px;
   }
-=======
->>>>>>> 9bf6104a3d12376c762ad8e90cec1bd22b412159
 }
