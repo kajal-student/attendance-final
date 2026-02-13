@@ -13,15 +13,28 @@ const AttendanceTable = () => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    try {
-      const res = await API.get('/api/attendance');
-      setRecords(res.data);
-      setFiltered(res.data);
-    } catch (err) {
-      console.error('Error:', err.message);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     const res = await API.get('/api/attendance');
+  //     setRecords(res.data);
+  //     setFiltered(res.data);
+  //   } catch (err) {
+  //     console.error('Error:', err.message);
+  //   }
+  // };
+const fetchData = async () => {
+  try {
+    const res = await API.get('/api/attendance');
+
+    const attendanceData = res.data?.data || [];
+
+    setRecords(attendanceData);
+    setFiltered(attendanceData);
+
+  } catch (err) {
+    console.error('Error:', err.message);
+  }
+};
 
   const handleMonthFilter = (e) => {
     const selected = e.target.value;
@@ -148,7 +161,8 @@ const AttendanceTable = () => {
           </thead>
 
           <tbody>
-            {filtered.map((r) => (
+           {Array.isArray(filtered) && filtered.map((r) => (
+
               <tr key={r._id} style={{ borderBottom: '1px solid #eee' }}>
                 <td style={{ padding: '10px' }}>{r.employeeId?.name}</td>
                 <td style={{ padding: '10px' }}>{r.employeeId?.email}</td>

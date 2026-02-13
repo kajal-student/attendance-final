@@ -9,7 +9,7 @@ const EmployeeList = () => {
     const load = async () => {
       try {
         const res = await API.get('/api/employees');
-        setEmployees(res.data);
+        setEmployees(res.data.data);
       } catch (err) {
         console.error("Error fetching employees:", err.message);
       }
