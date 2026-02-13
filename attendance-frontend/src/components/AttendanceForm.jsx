@@ -123,33 +123,82 @@ const AttendanceForm = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px' }}>
+    <div
+      style={{
+        maxWidth: '600px',
+        width: '100%',
+        margin: '0 auto',
+        padding: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '15px'
+      }}
+    >
+      {/* Employee Dropdown */}
       <select
         value={employeeId}
         onChange={(e) => setEmployeeId(e.target.value)}
         required
-        style={{ width: '100%', marginBottom: '15px' }}
+        style={{
+          width: '100%',
+          padding: '12px',
+          borderRadius: '10px',
+          border: '2px solid #e0e0e0',
+          fontSize: '1rem',
+          background: 'white',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+        }}
       >
         <option value="">👤 Select Employee</option>
         {employees.map((emp) => (
           <option key={emp._id} value={emp._id}>
-            {emp.name} - {emp.position}
+            {emp.name} — {emp.position}
           </option>
         ))}
       </select>
 
-      <div style={{ display: 'flex', gap: '10px' }}>
+      {/* Buttons */}
+      <div
+        style={{
+          display: 'flex',
+          gap: '10px',
+          flexWrap: 'wrap',
+        }}
+      >
         <button
           onClick={handleCheckIn}
           disabled={loading}
-          style={{ flex: 1, background: '#4caf50' }}
+          style={{
+            flex: 1,
+            padding: '14px 20px',
+            background: '#4caf50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '10px',
+            fontSize: '1rem',
+            fontWeight: '600',
+            cursor: 'pointer',
+            minWidth: '150px',
+          }}
         >
           {loading ? '⏳ Processing...' : '🟢 Check In'}
         </button>
+
         <button
           onClick={handleCheckOut}
           disabled={loading}
-          style={{ flex: 1, background: '#f44336' }}
+          style={{
+            flex: 1,
+            padding: '14px 20px',
+            background: '#f44336',
+            color: 'white',
+            border: 'none',
+            borderRadius: '10px',
+            fontSize: '1rem',
+            fontWeight: '600',
+            cursor: 'pointer',
+            minWidth: '150px',
+          }}
         >
           {loading ? '⏳ Processing...' : '🔴 Check Out'}
         </button>

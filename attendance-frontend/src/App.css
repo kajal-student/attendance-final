@@ -36,24 +36,37 @@
     transform: rotate(360deg);
   }
 } */
+/* ===============================
+      GLOBAL RESET
+================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===============================
+      BODY BACKGROUND
+================================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 20px;
+  overflow-x: hidden;
 }
 
+/* ===============================
+      MAIN APP CONTAINER
+================================== */
 .App {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* ===============================
+      HEADER
+================================== */
 .app-header {
   text-align: center;
   color: white;
@@ -75,6 +88,9 @@ body {
   opacity: 0.9;
 }
 
+/* ===============================
+      CONTENT SECTIONS
+================================== */
 .container {
   display: flex;
   flex-direction: column;
@@ -94,13 +110,17 @@ body {
   font-size: 1.5rem;
 }
 
+/* ===============================
+      FORMS
+================================== */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-input, select {
+input,
+select {
   padding: 12px 15px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -108,12 +128,16 @@ input, select {
   transition: all 0.3s ease;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* ===============================
+      BUTTONS
+================================== */
 button {
   padding: 12px 24px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -124,6 +148,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: fit-content;
 }
 
 button:hover {
@@ -135,10 +160,19 @@ button:active {
   transform: translateY(0);
 }
 
+/* ===============================
+      TABLE (DESKTOP)
+================================== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  min-width: 650px; /* prevents text squishing on mobile */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -148,7 +182,8 @@ thead {
   color: white;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
 }
@@ -166,12 +201,65 @@ tbody tr:last-child {
   border-bottom: none;
 }
 
+/* ===============================
+     MOBILE RESPONSIVENESS 
+================================== */
 @media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .app-header {
+    padding: 20px;
+  }
+
   .app-header h1 {
     font-size: 1.8rem;
   }
 
+  .app-header p {
+    font-size: 1rem;
+  }
+
   .section {
     padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  input,
+  select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   VERY SMALL DEVICES (Phones)
+================================== */
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  button {
+    padding: 10px 20px;
   }
 }

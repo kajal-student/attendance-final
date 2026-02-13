@@ -23,10 +23,16 @@
   object-fit: cover;
   border-radius: 6px;
 } */
+/* ===============================
+   RESPONSIVE EMPLOYEE LIST CSS
+   Fully Mobile + Tablet + Desktop
+================================== */
+
 .employee-list {
   margin-top: 20px;
 }
 
+/* Grid container */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -34,6 +40,7 @@
   margin-top: 20px;
 }
 
+/* Individual Employee Card */
 .employee-card {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 15px;
@@ -48,6 +55,7 @@
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
 }
 
+/* Employee Photo */
 .employee-card img {
   width: 100px;
   height: 100px;
@@ -68,4 +76,55 @@
   color: #666;
   font-size: 0.9rem;
   margin: 4px 0;
+}
+
+
+/* ===============================
+      RESPONSIVE BREAKPOINTS
+================================== */
+
+/* 📱 Small Phones */
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+
+  .employee-card {
+    padding: 15px;
+  }
+
+  .employee-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .employee-card h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* 📱 Medium Phones + Small Tablets */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .employee-card {
+    padding: 18px;
+  }
+}
+
+/* 💻 Tablets Landscape + Small Laptops */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 🖥️ Big Screens */
+@media (min-width: 1400px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
